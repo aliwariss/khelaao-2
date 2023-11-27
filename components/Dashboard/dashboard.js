@@ -1,11 +1,12 @@
+import { router } from 'expo-router';
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 // import SideMenuBar from '../components/SideMenuBar';
-import { RiTeamLine } from 'react-icons/ri';
+// import { RiTeamLine } from 'react-icons/ri';
 // import MoreInfo from '../components/MoreInfo';
 // import axios from '../utilis/axios';
 
-const HomeScreen = ({ navigation }) => {
+ export default function ({ navigation }) {
   const [showMoreInfo, setShowMoreInfo] = useState(true);
 
   return (
@@ -21,12 +22,13 @@ const HomeScreen = ({ navigation }) => {
             style={styles.card}
             onPress={() => {
               // Add logic for Create Team button press
-              navigation.navigate('CreateTeam');
+              // navigation.navigate('../CreateTeam');
+              router.push('/')
               console.log('Create team button pressed!');
             }}
           >
             <View style={styles.iconContainer}>
-              <RiTeamLine style={styles.icon} />
+              {/* <RiTeamLine style={styles.icon} /> */}
             </View>
             <Text style={styles.cardTitle}>Create Team</Text>
             <Text style={styles.cardDescription}>
@@ -39,7 +41,7 @@ const HomeScreen = ({ navigation }) => {
             style={styles.card}
             onPress={() => {
               // Add logic for Matches button press
-              navigation.navigate('Match');
+              // navigation.navigate('Match');
               console.log('Matches button pressed!');
             }}
           >
@@ -124,5 +126,3 @@ const styles = StyleSheet.create({
     color: '#666',
   },
 });
-
-export default HomeScreen;

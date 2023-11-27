@@ -14,15 +14,16 @@ export default function () {
   const [Otp, setOtp] = useState("");
 
   const submitNumberFn = () => {
-    router.replace("/Feed/Profile");
-    // const cleaned = phoneNumber.replace(/[^0-9]/g, "");
-    // if (!cleaned || cleaned.length !== 11) {
-    //   setErrorMsg("Invalid Phone Number");
-    //   setTimeout(() => {
-    //     setErrorMsg("");
-    //   }, 1500);
-    //   return;
-    // }
+    const cleaned = phoneNumber.replace(/[^0-9]/g, "");
+    if (!cleaned || cleaned.length !== 11) {
+      setErrorMsg("Invalid Phone Number");
+      setTimeout(() => {
+        setErrorMsg("");
+      }, 1500);
+      return;
+    }
+    setOtpStatus(true);
+    setPhoneNumber("");
     // services
     //   .login(phoneNumber)
     //   .then((res) => {
@@ -46,18 +47,18 @@ export default function () {
   };
 
   const submitOTPFn = () => {
-    // if (Otp.length !== 4) {
-    //   setErrorMsg("Invalid OTP Number");
-    //   setTimeout(() => {
-    //     setErrorMsg("");
-    //   }, 1500);
-    //   return;
-    // }
+    if (Otp.length !== 4) {
+      setErrorMsg("Invalid OTP Number");
+      setTimeout(() => {
+        setErrorMsg("");
+      }, 1500);
+      return;
+    }
 
-    // console.log("OTP", Otp);
-    // const verification = Otp;
-    // verification && router.replace("/Feed/Profile");
-    router.replace("/Feed/Profile");
+    console.log("OTP", Otp);
+    const verification = Otp;
+    verification && router.replace("/Feed/Profile");
+    // router.replace("/Feed/Profile");
   };
 
   const LoginScreen = () => {

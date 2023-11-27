@@ -1,9 +1,11 @@
 // import { View, Text } from "react-native";
-import HomeScreen from "../../components/Dashboard/dashboard"
+import { View } from "react-native";
+import HomeScreen from "../../components/Dashboard/Dashboard";
 
 export default function () {
   return (
-  
-      <HomeScreen/>
+    <View>
+      <HomeScreen />
+    </View>
   );
 }

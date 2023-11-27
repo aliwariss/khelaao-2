@@ -3,11 +3,11 @@ import HeadingLine from "../../components/loginPage/Heading";
 import UserDetails from "../../components/profile/userForm";
 import { ScrollView } from "react-native-gesture-handler";
 
-export default function Profile() {
+export default function () {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.body}>
-        <View style={styles.formBorder}>
+        {/* <View style={styles.formBorder}>
           <Image
             style={styles.profilePic}
             source={{
@@ -18,7 +18,7 @@ export default function Profile() {
           <Text style={styles.profileHeading}>Profile Details</Text>
           <HeadingLine headingText={"PROFILE"} />
           <UserDetails btnTitle={"Save Edit"} />
-        </View>
+        </View> */}
       </View>
     </ScrollView>
   );
